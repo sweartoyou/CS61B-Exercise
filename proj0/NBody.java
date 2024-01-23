@@ -47,7 +47,7 @@ public class NBody {
         double[] xForces = new double[planets.length];
         double[] yForces = new double[planets.length];
 
-        for (tme = 0; tme <= T; tme ++ ) {
+        for (tme = 0; tme <= T; tme += dt) {
             for (int i = 0; i < planets.length; i ++ ) {
                 xForces[i] = planets[i].calcNetForceExertedByX(planets);
                 yForces[i] = planets[i].calcNetForceExertedByY(planets);
