@@ -83,7 +83,7 @@ public class LinkedListDeque<T> {
         return getRecursive(sentinel.next, index);
     }
 
-    public T getRecursive(LinkedListDeque<T>.Node node, int index) {
+    private T getRecursive(LinkedListDeque<T>.Node node, int index) {
         if (index == 0) {
             return node.item;
         }

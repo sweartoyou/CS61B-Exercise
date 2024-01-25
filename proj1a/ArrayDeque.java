@@ -1,10 +1,8 @@
-import java.util.logging.Level;
-
 public class ArrayDeque<T> {
     private T[] items;
     private int left;
     private int right;
-    private int capacity = 0;
+    private int capacity = 8;
 
     public ArrayDeque() {
         items = (T[]) new Object[capacity];
@@ -63,7 +61,9 @@ public class ArrayDeque<T> {
     }
 
     public T removeFirst() {
-        if (isEmpty()) return null;
+        if (isEmpty()) {
+            return null;
+        }
         T res = items[left];
         left = (left + 1) % capacity;
         if (isLowUsage()) {
@@ -74,7 +74,9 @@ public class ArrayDeque<T> {
     }
 
     public T removeLast() {
-        if (isEmpty()) return null;
+        if (isEmpty()) {
+            return null;
+        }
         T res = items[left];
         right = (right - 1 + capacity) % capacity;
         if (isLowUsage()) {
@@ -85,7 +87,9 @@ public class ArrayDeque<T> {
     }
 
     public T get(int index) {
-        if (index < 0 || index >= size() || isEmpty()) return null;
+        if (index < 0 || index >= size() || isEmpty()) {
+            return null;
+        }
         if (left < right) {
             return items[left + index];
         } else {
