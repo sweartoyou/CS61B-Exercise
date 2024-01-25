@@ -77,8 +77,8 @@ public class ArrayDeque<T> {
         if (isEmpty()) {
             return null;
         }
-        T res = items[left];
         right = (right - 1 + capacity) % capacity;
+        T res = items[left];
         if (isLowUsage()) {
             resize((int) (capacity * 0.5));
         }
